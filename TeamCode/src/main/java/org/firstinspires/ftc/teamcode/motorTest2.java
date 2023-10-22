@@ -16,10 +16,10 @@ public class motorTest2 extends LinearOpMode {
 
     @Override
     public void runOpMode() {
-        fl_drive  = hardwareMap.get(DcMotor.class, "fl_drive");
-        bl_drive  = hardwareMap.get(DcMotor.class, "bl_drive");
-        fr_drive = hardwareMap.get(DcMotor.class, "fr_drive");
-        br_drive = hardwareMap.get(DcMotor.class, "br_drive");
+        fl_drive  = hardwareMap.get(DcMotor.class, "motorFL");
+        bl_drive  = hardwareMap.get(DcMotor.class, "motorBL");
+        fr_drive = hardwareMap.get(DcMotor.class, "motorFR");
+        br_drive = hardwareMap.get(DcMotor.class, "motorBR");
 
         fl_drive.setDirection(DcMotor.Direction.REVERSE);
         bl_drive.setDirection(DcMotor.Direction.REVERSE);

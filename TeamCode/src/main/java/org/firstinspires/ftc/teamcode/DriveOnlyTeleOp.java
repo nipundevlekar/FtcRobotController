@@ -26,7 +26,7 @@ public class DriveOnlyTeleOp extends LinearOpMode {
         while (opModeIsActive()) {
 
             // sets values of variables for gamepad1 (start+a) inputs for driving
-            forwardBackward = -gamepad1.left_stick_y;
+            forwardBackward = gamepad1.left_stick_y;
             leftRight = gamepad1.left_stick_x;
             rotate = gamepad1.right_trigger - gamepad1.left_trigger;
 
