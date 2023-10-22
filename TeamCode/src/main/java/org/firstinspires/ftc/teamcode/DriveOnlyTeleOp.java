@@ -5,7 +5,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 @TeleOp
-public class DriveOnlyTeleop extends LinearOpMode {
+public class DriveOnlyTeleOp extends LinearOpMode {
 
     // sets variables for motors
     private DcMotor driveFL, driveFR, driveBL, driveBR;
@@ -45,10 +45,10 @@ public class DriveOnlyTeleop extends LinearOpMode {
         telemetry.update();
 
         // maps drive motor variables to hardware configuration names
-        driveFL = hardwareMap.get(DcMotor.class, "motorTestFL");
-        driveFR = hardwareMap.get(DcMotor.class, "motorTestFR");
-        driveBL = hardwareMap.get(DcMotor.class, "motorTestBL");
-        driveBR = hardwareMap.get(DcMotor.class, "motorTestBR");
+        driveFL = hardwareMap.get(DcMotor.class, "motorFL");
+        driveFR = hardwareMap.get(DcMotor.class, "motorFR");
+        driveBL = hardwareMap.get(DcMotor.class, "motorBL");
+        driveBR = hardwareMap.get(DcMotor.class, "motorBR");
 
         // sets left motors to reverse direction so they're going the right way
         driveFL.setDirection(DcMotor.Direction.REVERSE);
