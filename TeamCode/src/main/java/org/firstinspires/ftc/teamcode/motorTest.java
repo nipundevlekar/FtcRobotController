@@ -8,16 +8,22 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 
 @TeleOp(name="DcMotor Test", group="OpMode")
 public class motorTest extends LinearOpMode {
-    private DcMotor leftDrive = null;
-    private DcMotor rightDrive = null;
+    private DcMotor fl_drive = null;
+    private DcMotor fr_drive = null;
+    private DcMotor bl_drive = null;
+    private DcMotor br_drive = null;
 
     @Override
     public void runOpMode() {
-        leftDrive  = hardwareMap.get(DcMotor.class, "left_drive");
-        rightDrive = hardwareMap.get(DcMotor.class, "right_drive");
+        fl_drive  = hardwareMap.get(DcMotor.class, "fl_drive");
+        bl_drive  = hardwareMap.get(DcMotor.class, "bl_drive");
+        fr_drive = hardwareMap.get(DcMotor.class, "fr_drive");
+        br_drive = hardwareMap.get(DcMotor.class, "br_drive");
 
-        leftDrive.setDirection(DcMotor.Direction.REVERSE);
-        rightDrive.setDirection(DcMotor.Direction.FORWARD);
+        fl_drive.setDirection(DcMotor.Direction.REVERSE);
+        bl_drive.setDirection(DcMotor.Direction.REVERSE);
+        fr_drive.setDirection(DcMotor.Direction.FORWARD);
+        br_drive.setDirection(DcMotor.Direction.FORWARD);
 
         waitForStart();
 
@@ -29,8 +35,10 @@ public class motorTest extends LinearOpMode {
             rightPower = -gamepad1.right_stick_y;
 
             // Send calculated power to wheels
-            leftDrive.setPower(leftPower);
-            rightDrive.setPower(rightPower);
+            fl_drive.setPower(leftPower);
+            bl_drive.setPower(leftPower);
+            fr_drive.setPower(rightPower);
+            br_drive.setPower(rightPower);
         }
     }
 }
